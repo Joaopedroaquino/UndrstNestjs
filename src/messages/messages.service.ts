@@ -5,6 +5,7 @@ import { Message } from './Message';
 export class MessagesService {
 
 
+
 private messages: Message[] = [
     {
         id: 1,
@@ -41,8 +42,17 @@ update(id: number, message: Message) {
     this.messages[index] = message;
 
     return message;
-  
-  
   }
+
+delete(id: number) {
+    const index = this.messages.findIndex((message)=> message.id === id );
+
+    delete this.messages[index];
+
+    return true;
+
+
+}
+
 
 }
