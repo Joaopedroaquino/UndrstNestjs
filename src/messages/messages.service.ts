@@ -2,10 +2,11 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class MessagesService {
+
 public messages = [
     {
         id: 1,
-        text:  'Primeria mensagem'
+        text:  'Primeira mensagem'
     },
 
     {
@@ -20,6 +21,10 @@ public messages = [
 
 findALl(){
     return this.messages;
+}
+
+findById(id: number) {
+return this.messages.find((message) => message.id === id);
 }
 
 }
