@@ -7,6 +7,7 @@ import { MessagesService } from './messages/messages.service';
 @Module({
   imports: [],
   controllers: [AppController, MessagesController],
+  //inj services in controllers 
   providers: [AppService, MessagesService],
 })
 export class AppModule {}

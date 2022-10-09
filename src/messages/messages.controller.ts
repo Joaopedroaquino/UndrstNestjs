@@ -1,23 +1,13 @@
 import { Controller, Get } from '@nestjs/common';
+import { MessagesService } from './messages.service';
 
 @Controller('messages')
 export class MessagesController {
+    //inj messageservice
+  constructor(private messagesService: MessagesService){}
+
     @Get()
     findAll(){
-        return [
-            {
-                id: 1,
-                text:  'Primeria mensagem'
-            },
-
-            {
-                id: 2,
-                text:  'Segunda mensagem'
-            },
-            {
-                id: 3,
-                text:  'Terceira mensagem'
-            }
-        ];
+        return this.messagesService.findALl();
     }
 }
